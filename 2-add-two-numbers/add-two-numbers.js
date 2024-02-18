@@ -16,7 +16,6 @@ class ListNode {
         this.next = next;
     }
 }
-
 const addTwoNumbers = function(l1, l2) {
     let carry = 0;
     let dummyHead = new ListNode();
