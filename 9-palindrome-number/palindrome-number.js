@@ -3,23 +3,12 @@
  * @return {boolean}
  */
 
-function countDigits(n) {
-    if (n < 10) {
-        return 1;
-    } else {
-        return 1 + countDigits(Math.floor(n / 10));
-    }
+function reverseNumber(num, reversed = 0) {
+    if (num === 0) return reversed;
+    const lastDigit = num % 10;
+    reversed = (reversed * 10) + lastDigit;
+    return reverseNumber(Math.floor(num / 10), reversed);
 }
-
-
-function reverseNumber(n) {
-    if (n < 10) {
-        return n
-    }
-    let exp = countDigits(n) - 1;
-    return (n % 10) * 10 ** exp + reverseNumber(Math.floor(n / 10))
-}
-
 const isPalindrome = function (x) {
     if (x < 0) return false;
     return x === reverseNumber(x)
