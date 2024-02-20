@@ -5,7 +5,7 @@
 const removeDuplicates = function (nums) {
   const uniqueNums = new Set(nums);
 
-  nums.splice(0, uniqueNums.size, ...Array.from(uniqueNums));
-  
+//   nums.splice(0, uniqueNums.size, ...Array.from(uniqueNums));
+  nums.unshift(...Array.from(uniqueNums))
   return uniqueNums.size;
 };
